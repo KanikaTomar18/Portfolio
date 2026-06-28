@@ -1,37 +1,27 @@
 import os
 import re
-import smtplib
-from email.message import EmailMessage
+import requests
 
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 
 app = Flask(__name__)
 
-# Allow your deployed frontend (and localhost while testing) to call this API.
-# Replace these with your actual frontend URL(s) once deployed.
 ALLOWED_ORIGINS = [
     "http://127.0.0.1:5500",
     "http://localhost:5500",
-    "https://kanikatomar18.github.io",   # example if you host the frontend on GitHub Pages
-    # "https://your-custom-domain.com",
+    "https://kanikatomar18.github.io",
 ]
-CORS(app, origins=ALLOWED_ORIGINS, methods=["GET", "POST", "OPTIONS"], allow_headers=["Content-Type"])
-@app.errorhandler(Exception)
-def handle_exception(e):
-    app.logger.error(f"Unhandled error: {e}")
-    return jsonify({"ok": False, "error": "Server error. Please try again."}), 500
+CORS(app, resources={r"/api/*": {"origins": ALLOWED_ORIGINS}})
 
-EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")        # the Gmail account that SENDS the mail
-EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")      # a Gmail "App Password", not your normal password
-TO_EMAIL = os.environ.get("TO_EMAIL", EMAIL_ADDRESS)   # where you want to RECEIVE messages
+RESEND_API_KEY = os.environ.get("RESEND_API_KEY")
+TO_EMAIL = os.environ.get("TO_EMAIL")  # where YOU want to receive messages
 
 EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 
 
 @app.get("/")
 def health_check():
-    """Simple endpoint so you (or Render) can confirm the service is alive."""
     return jsonify({"status": "ok", "service": "kanika-portfolio-contact-api"})
 
 
@@ -44,7 +34,6 @@ def contact():
     subject = (data.get("subject") or "Portfolio contact form").strip()
     message = (data.get("message") or "").strip()
 
-    # --- basic validation ---
     if not name or not email or not message:
         return jsonify({"ok": False, "error": "Name, email and message are required."}), 400
 
@@ -54,38 +43,43 @@ def contact():
     if len(message) > 5000:
         return jsonify({"ok": False, "error": "Message is too long."}), 400
 
-    if not EMAIL_ADDRESS or not EMAIL_PASSWORD:
-        app.logger.error("EMAIL_ADDRESS / EMAIL_PASSWORD env vars are not set.")
+    if not RESEND_API_KEY or not TO_EMAIL:
+        app.logger.error("RESEND_API_KEY / TO_EMAIL env vars are not set.")
         return jsonify({"ok": False, "error": "Server email is not configured."}), 500
 
-    # --- build and send the email ---
     try:
-        msg = EmailMessage()
-        msg["Subject"] = f"Portfolio contact: {subject}"
-        msg["From"] = EMAIL_ADDRESS
-        msg["To"] = TO_EMAIL
-        msg["Reply-To"] = email
-        msg.set_content(
-            f"New message from your portfolio contact form\n\n"
-            f"Name: {name}\n"
-            f"Email: {email}\n"
-            f"Subject: {subject}\n\n"
-            f"Message:\n{message}\n"
+        resp = requests.post(
+            "https://api.resend.com/emails",
+            headers={
+                "Authorization": f"Bearer {RESEND_API_KEY}",
+                "Content-Type": "application/json",
+            },
+            json={
+                "from": "Portfolio Contact <onboarding@resend.dev>",
+                "to": [TO_EMAIL],
+                "reply_to": email,
+                "subject": f"Portfolio contact: {subject}",
+                "text": (
+                    f"New message from your portfolio contact form\n\n"
+                    f"Name: {name}\n"
+                    f"Email: {email}\n"
+                    f"Subject: {subject}\n\n"
+                    f"Message:\n{message}\n"
+                ),
+            },
+            timeout=10,
         )
 
-        with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
-            smtp.starttls()
-            smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
-            smtp.send_message(msg)
-            
+        if resp.status_code >= 400:
+            app.logger.error(f"Resend API error: {resp.status_code} {resp.text}")
+            return jsonify({"ok": False, "error": "Something went wrong sending your message."}), 500
 
         return jsonify({"ok": True, "message": "Thanks! Your message has been sent."})
 
-    except Exception as exc:  # noqa: BLE001 - we want to log and return a clean error either way
+    except Exception as exc:
         app.logger.error(f"Failed to send contact email: {exc}")
         return jsonify({"ok": False, "error": "Something went wrong sending your message. Please try again later."}), 500
 
 
 if __name__ == "__main__":
-    # Local dev only. In production, gunicorn runs this (see Procfile).
     app.run(debug=True, port=5000)
