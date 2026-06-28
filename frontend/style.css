@@ -262,3 +262,17 @@ footer{border-top:1px solid #f4f4f5}
   background:#3f3f46 !important;
   border-color:#52525b !important;
 }
+/* ── mobile nav: solid background when menu is open ── */
+@media (max-width: 767.98px) {
+  .navbar-custom .navbar-collapse {
+    background: #fff;
+    margin-top: .5rem;
+    border-radius: .75rem;
+    padding: 1rem;
+    box-shadow: 0 4px 24px rgba(0,0,0,.08);
+  }
+  [data-bs-theme="dark"] .navbar-custom .navbar-collapse {
+    background: #09090b;
+    box-shadow: 0 4px 24px rgba(0,0,0,.4);
+  }
+}
