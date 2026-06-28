@@ -106,13 +106,13 @@ portfolio/
 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/portfolio.git
+git clone https://github.com/KanikaTomar18/Portfolio.git
 ```
 
 2. Open the folder
 
 ```bash
-cd portfolio
+cd Portfolio
 ```
 
 3. Run index.html in your browser
