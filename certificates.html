@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Kanika — Certificates and achievements.">
+<meta name="author" content="Kanika">
+<title>Certificates — Kanika</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ═══ NAV ═══ -->
+<header class="navbar-custom" id="mainNav">
+  <nav class="navbar navbar-expand-md py-3">
+    <div class="container" style="max-width:1140px;">
+      <a class="navbar-brand fw-bold fs-4" href="index.html" style="font-family:'PT Sans',sans-serif;">
+        <span>kan</span><span class="text-accent">ika</span>
+      </a>
+
+      <button class="navbar-toggler border-0 icon-circle" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle menu">
+        <svg id="hamOpen" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        <svg id="hamClose" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display:none"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav mx-auto gap-md-4 gap-3 mt-4 mt-md-0 text-center text-md-start">
+          <li class="nav-item"><a class="nav-link nl text-muted-custom" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link nl text-muted-custom" href="index.html#work">Work</a></li>
+          <li class="nav-item"><a class="nav-link nl text-muted-custom" href="index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link nl text-muted-custom active" href="index.html#blog">Achievement</a></li>
+          <li class="nav-item"><a class="nav-link nl text-muted-custom" href="index.html#contact">Contact</a></li>
+        </ul>
+        <div class="d-flex d-md-none flex-column align-items-center gap-3 mt-4 pt-3 border-top">
+          <a href="index.html#contact" class="btn-accent shimmer">Hire me →</a>
+        </div>
+      </div>
+
+      <div class="d-flex align-items-center gap-3 order-3">
+        <button id="darkToggle" class="icon-circle" aria-label="Toggle dark mode">
+          <svg id="iconSun" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg id="iconMoon" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="display:none"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707M17.657 17.657l-.707-.707M6.343 6.343l-.707-.707M12 8a4 4 0 100 8 4 4 0 000-8z"/></svg>
+        </button>
+        <a href="index.html#contact" class="btn-accent shimmer d-none d-md-inline-flex align-items-center gap-2">
+          Hire me
+          <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+<!-- ═══ PAGE HERO ═══ -->
+<section class="page-hero">
+  <div class="container" style="max-width:1140px;">
+    <a href="index.html" class="breadcrumb-link reveal mb-4 d-inline-flex">
+      <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/></svg>
+      Back home
+    </a>
+    <p class="reveal small fw-medium text-accent text-uppercase mb-3" style="letter-spacing:.15em;">Achievement</p>
+    <h1 class="reveal d1 fw-bold mb-3">Certificates</h1>
+    <p class="reveal d2 text-muted-custom" style="max-width:36rem;">Courses, workshops and exams I've completed. Click "View certificate" to open the full image.</p>
+  </div>
+</section>
+
+<!-- ═══ CERTIFICATES GRID ═══ -->
+<section class="section-pad pt-4">
+  <div class="container" style="max-width:1140px;">
+    <div class="row g-4">
+
+      <!-- 1. Oracle -->
+      <div class="col-md-4">
+        <article class="reveal card-h card-soft h-100" style="overflow:hidden;">
+          <div class="pf w-100 cert-img" style="background:#fff;">
+            <img src="images/oracle.png" alt="Oracle Cloud Infrastructure 2025 Certified Data Science Professional" style="object-fit:contain;">
+          </div>
+          <div class="p-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="badge-tag">Oracle University</span>
+              <span class="small" style="color:#a1a1aa;">Oct 2025</span>
+            </div>
+            <h3 class="fw-bold fs-5 mb-2">OCI 2025 Certified Data Science Professional</h3>
+            <p class="small text-muted-custom mb-3">Validates hands-on proficiency in building, training, and deploying machine learning models using OCI Data Science services. Covers model management and MLOps practices on a major enterprise cloud platform. Valid till Oct 2027.</p>
+            <button type="button" class="nl small fw-medium d-inline-flex align-items-center gap-1 border-0 bg-transparent p-0" data-bs-toggle="modal" data-bs-target="#certModal" data-img="images/oracle.png" data-title="OCI 2025 Certified Data Science Professional">
+              View certificate
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- 2. Google Cloud Cybersecurity -->
+      <div class="col-md-4">
+        <article class="reveal d1 card-h card-soft h-100" style="overflow:hidden;">
+          <div class="pf w-100 cert-img" style="background:#fff;">
+            <img src="images/google-cloud-cyber.png" alt="Google Cloud Career Launchpad Cybersecurity Track" style="object-fit:contain;">
+          </div>
+          <div class="p-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="badge-tag">Google Cloud</span>
+              <span class="small" style="color:#a1a1aa;">Mar 2026</span>
+            </div>
+            <h3 class="fw-bold fs-5 mb-2">Career Launchpad – Cybersecurity Track</h3>
+            <p class="small text-muted-custom mb-3">Completed all courses and labs covering threat detection, cloud security practices, and risk management. A multi-module, lab-based learning path rather than a single quick badge.</p>
+            <button type="button" class="nl small fw-medium d-inline-flex align-items-center gap-1 border-0 bg-transparent p-0" data-bs-toggle="modal" data-bs-target="#certModal" data-img="images/google-cloud-cyber.png" data-title="Google Cloud Career Launchpad – Cybersecurity Track">
+              View certificate
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- 3. Deloitte -->
+      <div class="col-md-4">
+        <article class="reveal d2 card-h card-soft h-100" style="overflow:hidden;">
+          <div class="pf w-100 cert-img" style="background:#fff;">
+            <img src="images/Deloitte.png" alt="Deloitte Technology Job Simulation" style="object-fit:contain;">
+          </div>
+          <div class="p-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="badge-tag">Deloitte · Forage</span>
+              <span class="small" style="color:#a1a1aa;">Jun 2026</span>
+            </div>
+            <h3 class="fw-bold fs-5 mb-2">Technology Job Simulation</h3>
+            <p class="small text-muted-custom mb-3">Completed real-world coding and development tasks modeled on actual Deloitte projects, gaining exposure to practical problem-solving and technical workflows used in professional consulting environments.</p>
+            <button type="button" class="nl small fw-medium d-inline-flex align-items-center gap-1 border-0 bg-transparent p-0" data-bs-toggle="modal" data-bs-target="#certModal" data-img="images/Deloitte.png" data-title="Deloitte Technology Job Simulation">
+              View certificate
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- 4. Google Cloud Data Analytics -->
+      <div class="col-md-4">
+        <article class="reveal d3 card-h card-soft h-100" style="overflow:hidden;">
+          <div class="pf w-100 cert-img" style="background:#fff;">
+            <img src="images/google-cloud-data-analytics-certificate.png" alt="Google Cloud Data Analytics Certificate" style="object-fit:contain;">
+          </div>
+          <div class="p-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="badge-tag">Google Cloud</span>
+              <span class="small" style="color:#a1a1aa;">2026</span>
+            </div>
+            <h3 class="fw-bold fs-5 mb-2">Google Cloud Data Analytics</h3>
+            <p class="small text-muted-custom mb-3">Covers foundational concepts in data analysis, visualization, and cloud-based analytics tools — a supporting credential alongside the core certifications.</p>
+            <button type="button" class="nl small fw-medium d-inline-flex align-items-center gap-1 border-0 bg-transparent p-0" data-bs-toggle="modal" data-bs-target="#certModal" data-img="images/google-cloud-data-analytics-certificate.png" data-title="Google Cloud Data Analytics Certificate">
+              View certificate
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- 5. Samyak Full Stack -->
+      <div class="col-md-4">
+        <article class="reveal d4 card-h card-soft h-100" style="overflow:hidden;">
+          <div class="pf w-100 cert-img" style="background:#fff;">
+            <img src="images/web.png" alt="Full Stack Internship Certificate" style="object-fit:contain;">
+          </div>
+          <div class="p-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="badge-tag">Samyak IT Solutions</span>
+              <span class="small" style="color:#a1a1aa;">Jul–Dec 2024</span>
+            </div>
+            <h3 class="fw-bold fs-5 mb-2">Full Stack Internship Training</h3>
+            <p class="small text-muted-custom mb-3">6-month live project–based training covering front-end and back-end development practices through practical project work.</p>
+            <button type="button" class="nl small fw-medium d-inline-flex align-items-center gap-1 border-0 bg-transparent p-0" data-bs-toggle="modal" data-bs-target="#certModal" data-img="images/web.png" data-title="Full Stack Internship Training">
+              View certificate
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+       <!-- 6. DGW -->
+      <div class="col-md-4">
+        <article class="reveal card-h card-soft h-100" style="overflow:hidden;">
+          <div class="pf w-100 cert-img" style="background:#fff;">
+            <img src="images/DGW.png" alt="Experiance letter" style="object-fit:contain;">
+          </div>
+          <div class="p-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="badge-tag">Digital Go Where</span>
+              <span class="small" style="color:#a1a1aa;">Feb 2024 to Aug 2024</span>
+            </div>
+            <h3 class="fw-bold fs-5 mb-2">Development Internship (Experience Letter)</h3>
+            <p class="small text-muted-custom mb-3">Worked as a Development Team intern at Digital Go Where from Feb 2024 to Aug 2024 (~6 months). Contributed to live development projects, demonstrating consistency, professionalism, and growing technical capability over an extended internship period. Recognized by the company for dedication and learning aptitude</p>
+            <button type="button" class="nl small fw-medium d-inline-flex align-items-center gap-1 border-0 bg-transparent p-0" data-bs-toggle="modal" data-bs-target="#certModal" data-img="images/DGW.png" data-title="Experiance">
+              View certificate
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- 7. Samyak C/C++ -->
+      <div class="col-md-4">
+        <article class="reveal card-h card-soft h-100" style="overflow:hidden;">
+          <div class="pf w-100 cert-img" style="background:#fff;">
+            <img src="images/c.png" alt="C and C++ Internship Certificate" style="object-fit:contain;">
+          </div>
+          <div class="p-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="badge-tag">Samyak IT Solutions</span>
+              <span class="small" style="color:#a1a1aa;">Jul 2023</span>
+            </div>
+            <h3 class="fw-bold fs-5 mb-2">C &amp; C++ Programming Internship</h3>
+            <p class="small text-muted-custom mb-3">Short live project–based internship focused on core programming fundamentals and applied coding exercises.</p>
+            <button type="button" class="nl small fw-medium d-inline-flex align-items-center gap-1 border-0 bg-transparent p-0" data-bs-toggle="modal" data-bs-target="#certModal" data-img="images/c.png" data-title="C & C++ Programming Internship">
+              View certificate
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- 8.Oracle badge -->
+      <div class="col-md-4">
+        <article class="reveal card-h card-soft h-100" style="overflow:hidden;">
+          <div class="pf w-100 cert-img" style="background:#fff;">
+            <img src="images/OCI25DSOCP.jpg" alt="Oracle Badge" style="object-fit:contain;">
+          </div>
+          <div class="p-4">
+            <div class="d-flex align-items-center gap-2 mb-3">
+              <span class="badge-tag">Oracle</span>
+              <span class="small" style="color:#a1a1aa;">2025</span>
+            </div>
+            <h3 class="fw-bold fs-5 mb-2">Oracle Badge</h3>
+            <p class="small text-muted-custom mb-3">Recognition for demonstrating expertise in Oracle technologies.</p>
+            <button type="button" class="nl small fw-medium d-inline-flex align-items-center gap-1 border-0 bg-transparent p-0" data-bs-toggle="modal" data-bs-target="#certModal" data-img="images/OCI25DSOCP.jpg" data-title="Oracle Badge">
+              View certificate
+              <svg width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </button>
+          </div>
+        </article>
+      </div>
+
+
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ═══ CERTIFICATE LIGHTBOX MODAL ═══ -->
+<div class="modal fade" id="certModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content card-soft border-0">
+      <div class="modal-header border-0 pb-0">
+        <h5 class="modal-title fw-bold" id="certModalTitle">Certificate</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex justify-content-center pt-2">
+        <img id="certModalImg" src="" alt="Certificate preview" style="max-width:100%;max-height:75vh;border-radius:.75rem;">
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container py-4 d-flex flex-column flex-sm-row align-items-center justify-content-between gap-3" style="max-width:1140px;">
+    <p class="small text-muted-custom mb-0">© <span id="yr"></span> Kanika. All rights reserved. <br> Developed by <a href="https://github.com/KanikaTomar18" target="_blank" class="fw-bold">Kanika Tomar</a></p>
+  </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+$(function () {
+  /* dark mode */
+  var saved = localStorage.getItem('theme');
+  var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+  var isDark = saved === 'dark' || (!saved && prefersDark);
+  function applyTheme(dark) {
+    document.documentElement.setAttribute('data-bs-theme', dark ? 'dark' : 'light');
+    $('#iconSun').toggle(!dark);
+    $('#iconMoon').toggle(dark);
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+  }
+  applyTheme(isDark);
+  $('#darkToggle').on('click', function () { isDark = !isDark; applyTheme(isDark); });
+
+  /* navbar scroll shadow */
+  $(window).on('scroll', function () {
+    $('#mainNav').toggleClass('scrolled', $(window).scrollTop() > 20);
+  });
+
+  /* mobile menu icon swap + close on link click */
+  var navMenu = document.getElementById('navMenu');
+  var bsCollapse = new bootstrap.Collapse(navMenu, { toggle: false });
+  $('#navMenu').on('show.bs.collapse', function () { $('#hamOpen').hide(); $('#hamClose').show(); });
+  $('#navMenu').on('hide.bs.collapse', function () { $('#hamOpen').show(); $('#hamClose').hide(); });
+  $('#navMenu a').on('click', function () { if ($('#navMenu').hasClass('show')) bsCollapse.hide(); });
+
+  /* reveal on scroll */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) { entry.target.classList.add('in'); io.unobserve(entry.target); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.reveal').forEach(function (el) { io.observe(el); });
+
+  /* certificate lightbox modal */
+  $('#certModal').on('show.bs.modal', function (e) {
+    var btn = $(e.relatedTarget);
+    $('#certModalImg').attr('src', btn.data('img'));
+    $('#certModalTitle').text(btn.data('title'));
+  });
+
+  $('#yr').text(new Date().getFullYear());
+});
+</script>
+
+</body>
+</html>
+
+
+
