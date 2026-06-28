@@ -73,9 +73,11 @@ def contact():
             f"Message:\n{message}\n"
         )
 
-        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
+        with smtplib.SMTP("smtp.gmail.com", 587, timeout=10) as smtp:
+            smtp.starttls()
             smtp.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
             smtp.send_message(msg)
+            
 
         return jsonify({"ok": True, "message": "Thanks! Your message has been sent."})
 
