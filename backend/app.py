@@ -16,7 +16,11 @@ ALLOWED_ORIGINS = [
     "https://kanikatomar18.github.io",   # example if you host the frontend on GitHub Pages
     # "https://your-custom-domain.com",
 ]
-CORS(app, resources={r"/api/*": {"origins": ALLOWED_ORIGINS}})
+CORS(app, origins=ALLOWED_ORIGINS, methods=["GET", "POST", "OPTIONS"], allow_headers=["Content-Type"])
+@app.errorhandler(Exception)
+def handle_exception(e):
+    app.logger.error(f"Unhandled error: {e}")
+    return jsonify({"ok": False, "error": "Server error. Please try again."}), 500
 
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")        # the Gmail account that SENDS the mail
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")      # a Gmail "App Password", not your normal password

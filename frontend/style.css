@@ -258,3 +258,7 @@ footer{border-top:1px solid #f4f4f5}
   .page-hero{padding:7.5rem 0 2rem}
   .contact-section-bg{padding:2rem 1.25rem}
 }
+.stag{
+  background:#3f3f46 !important;
+  border-color:#52525b !important;
+}
